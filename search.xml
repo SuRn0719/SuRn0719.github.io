@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo 常用的部分快捷键]]></title>
+    <url>%2F2019%2F01%2F27%2FHexo-%E5%B8%B8%E7%94%A8%E7%9A%84%E9%83%A8%E5%88%86%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[hexo s启动本地服务器，用于预览主题和内容，默认地址为：http://localhost:4000/。预览的同时可以修改文章内容、代码或者是主题的配置文件，保存直接刷新就可以了。如果是修改Hexo默认的配置文件（ _config.yml ）的话，需要重启才生效。 hexo n &quot;文章名字&quot;新建一篇标题为文章名字的文章，如果有空格，需要打引号。标题可以在“文章名字.md”文件里面修改。 文章可以拥有下面这些属性-SettingDescriptionDefault1layoutLayoutpost或page2title文章的标题3date创建日期文件的创建日期4updated修改日期文件的修改日期5comments是否开启评论true6tags标签7categories分类8permalinkurl中的名字文件名]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[记日历每周的心灵禅语。]]></title>
     <url>%2F2019%2F01%2F27%2F%E5%BF%83%E7%81%B5%E7%A6%85%E8%AF%AD%2F</url>
     <content type="text"><![CDATA[第一周：过去事，过去心，不可记得；现在事，现在心，随缘即可；未来事，未来心，何必劳心。 第二周：生命犹如一片绿叶，随着时间的流逝，慢慢的变得枯黄，但他的叶脉，还是那么的清晰可见。 第三周：木桶最短的一节决定其容量；铁链最弱的一环决定其强度；人最大的缺点决定其是否成功。 第四周：每个人都有潜在的能量，只能很容易被习惯所掩盖，被时间所迷离，被惰性给消磨。 第五周：你不必和因果争吵，因果从来就不会误人。你也不必和命运争吵，命运它是最公平的审判官。]]></content>
