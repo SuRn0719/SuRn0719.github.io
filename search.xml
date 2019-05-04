@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Sublime Text 3 Emmet Html默认补充模板修改]]></title>
+    <url>%2F2019%2F05%2F04%2FSublime-Text-3-Html%E9%BB%98%E8%AE%A4%E8%A1%A5%E5%85%85%E6%A8%A1%E6%9D%BF%E4%BF%AE%E6%94%B9%2F</url>
+    <content type="text"><![CDATA[参考引用于这里。如果你用sublime text编辑网页，选择格式为Html的时候。你只要打一个！+ tab键，你就会生成一个默认的模板：12345678910&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;/body&gt;&lt;/html&gt; 这可能不能满足平时的需求，你可能需要添加一些其它的，比如我们在head标签里的title标签下面加一行自适应的代码：&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;因此我们需要自己定义一个新的模板，这个时候我们就要修改我们的emmet控件的配置的。首先我们可以在Preferences -&gt; Package Settings -&gt; Emmet -&gt; Setting - Default找到标准配置文件，其中有个snippets字段：12345678// Custom snippets definitions, as per https://github.com/emmetio/emmet/blob/master/snippets.json"snippets": &#123; // "html": &#123; // "abbreviations": &#123; // "example": "&lt;div class='example' title='Custom element example'&gt;" // &#125; // &#125;&#125; 这里就可以修改和定义我们的Html片段，但是这是默认的，我们尽量不要去修改，以免污染标准的配置文件。但我们可以修改用户的配置文件。位置在Preferences -&gt; Package Settings -&gt; Emmet -&gt; Setting - User。打开文件添加代码：123456789101112&#123; // Custom snippets definitions, as per https://github.com/emmetio/emmet/blob/master/snippets.json "snippets": &#123; "html": &#123; "abbreviations": &#123; "example": "&lt;div class='example' title='Custom element example'&gt;", "mydoc": "html&gt;(head&gt;meta[charset='utf-8']+title&#123;$&#123;1:文档标题&#125;&#125;)+body", "!!": "!!!+mydoc[lang='zh-Hans']" &#125; &#125; &#125;&#125; 上面我们定义三个html模板，一个是默认的示例模板example，还两个是自己定义的mydoc和!!，这个都是可以修改的，你习惯用什么代替就用什么代替，输入的时候打上你自己定义的名字 然后按tab就可以显示你自己定义的模板。 这个是我自己修改的模板：12345678910111213141516&#123; // Custom snippets definitions, as per https://github.com/emmetio/emmet/blob/master/snippets.json "snippets": &#123; "html": &#123; "snippets": &#123; "myviewport": "&lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;", "default-css": "&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;" &#125;, "abbreviations": &#123; "example": "&lt;div class='example' title='Custom element example'&gt;", "mydoc": "html&gt;(head&gt;meta[charset='utf-8']+title&#123;$&#123;1:Document&#125;&#125;+myviewport+default-css)+body", "!!": "mydoc[lang='en']", &#125; &#125; &#125;&#125; 当我输入!! + tab时，默认的模板是这个样的：1234567891011&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="utf-8"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;link rel="stylesheet" href="style.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;/body&gt;&lt;/html&gt; 这里你会看到我还加了一个snippets，这个是添加Html的代码片段，分别名为myviewport和defult-css。这个可以在我们定义模板的时候用到，也可以在书写Html的时候，直接输入名称+tab 使用。]]></content>
+      <categories>
+        <category>Sublime Text</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>其它</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[唯美句子]]></title>
     <url>%2F2019%2F03%2F10%2F%E5%94%AF%E7%BE%8E%E5%8F%A5%E5%AD%90%2F</url>
     <content type="text"><![CDATA[已经练习完了第一本人生格言，现在开始练习第二本唯美句子。]]></content>
