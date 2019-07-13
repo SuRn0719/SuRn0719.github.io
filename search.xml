@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记优酷路由宝刷华硕固件]]></title>
+    <url>%2F2019%2F07%2F13%2F%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%88%B7%E6%9C%BA%2F</url>
+    <content type="text"><![CDATA[以前花了50多买的一个优酷路由宝的，开始还用优酷路由宝去赚了一点金币，也有几十块，也一只兑换，现在优酷路由宝都已经销声匿迹了。以前有看到过优酷路由宝是可以刷潘多拉固件的，以前就想给它刷机，但是一直都没有时间。就在前几天，我想起它有个USB口，所以决定给它刷机，让它更有用处一点。不过在刷机的过程中，还是耗了很多时间，我也看了很多教程，但还是并不顺利。好了不多说了，直接写写下我看到的教程。 第一步:获取优酷路由宝的root权限。首先需要一个文件：YKL1_2.1.0613.8617_root_telnet-亲测可用.bin，这个可以自己去网上找。1、登录路由器管理界面，「更多设置」-&gt;「系统升级」-&gt;「手动升级」，选择前面下载的 YKL1_2.1.0613.8617_root_telnet-亲测可用.bin，点击「上传文件」，等待升级包验证通过，点击「立即升级」，然后就等待路由器重启，这个过程中不要断开网线也不要断开电源。2、重启完成后，按住路由器上 RESET 按键重置路由器。（不然等下回进不去telnet，亲测） 第二步：刷Breed（不死鸟）固件1、CMD下Telnet 192.168.11.1 （如果CMD下不能进去，需要你自己去打开telnat服务，或者用Putty进去）连接路由器。因为重置了，所以进去是没有登录账号和密码的，直接就会进去。2、Telnet 登录进去后，输入 cd /tmp wget https://breed.hackpascal.net/breed-mt7620-youku-yk1.bin （注：如果wget 进不去的 就换成 curl -O https://breed.hackpascal.net/breed-mt7620-youku-yk1.bin -k）等待下载完成，确认。3、解锁 Bootloader，Telnet 执行：mtd unlock Bootloader（注意大小写），屏幕显示： 「 Unlocking Bootloader … 」4、接下来刷 Breed，Telnet 执行：mtd -r write /tmp/breed-mt7620-youku-yk1.bin Bootloader（注意大小写），屏幕显示：「 Unlocking Bootloader … Writing from /tmp/00.bin to Bootloader …Rebooting … 」然后路由器就会重启。 第三步：进Breed刷华硕固件1、路由器断电，按住复位键不放，上电，10s之后松手。路由器访问192.168.1.1进入Breed界面。2、刷机前最好先备份一下编程器固件和 EEPROM。3、然后固件更新，刷入老毛子固件 RT-N14U-GPIO-1-youku1-128M_3.4.3.9-099.trx。其实进入Breed之后还可以刷其他的固件的，只要是对应你路由器的，都可以。]]></content>
+      <categories>
+        <category>杂碎</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>刷机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Sublime Text 3 Emmet Html默认补充模板修改]]></title>
     <url>%2F2019%2F05%2F04%2FSublime-Text-3-Html%E9%BB%98%E8%AE%A4%E8%A1%A5%E5%85%85%E6%A8%A1%E6%9D%BF%E4%BF%AE%E6%94%B9%2F</url>
     <content type="text"><![CDATA[参考引用于这里。如果你用sublime text编辑网页，选择格式为Html的时候。你只要打一个！+ tab键，你就会生成一个默认的模板：12345678910&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;/body&gt;&lt;/html&gt; 这可能不能满足平时的需求，你可能需要添加一些其它的，比如我们在head标签里的title标签下面加一行自适应的代码：&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;因此我们需要自己定义一个新的模板，这个时候我们就要修改我们的emmet控件的配置的。首先我们可以在Preferences -&gt; Package Settings -&gt; Emmet -&gt; Setting - Default找到标准配置文件，其中有个snippets字段：12345678// Custom snippets definitions, as per https://github.com/emmetio/emmet/blob/master/snippets.json"snippets": &#123; // "html": &#123; // "abbreviations": &#123; // "example": "&lt;div class='example' title='Custom element example'&gt;" // &#125; // &#125;&#125; 这里就可以修改和定义我们的Html片段，但是这是默认的，我们尽量不要去修改，以免污染标准的配置文件。但我们可以修改用户的配置文件。位置在Preferences -&gt; Package Settings -&gt; Emmet -&gt; Setting - User。打开文件添加代码：123456789101112&#123; // Custom snippets definitions, as per https://github.com/emmetio/emmet/blob/master/snippets.json "snippets": &#123; "html": &#123; "abbreviations": &#123; "example": "&lt;div class='example' title='Custom element example'&gt;", "mydoc": "html&gt;(head&gt;meta[charset='utf-8']+title&#123;$&#123;1:文档标题&#125;&#125;)+body", "!!": "!!!+mydoc[lang='zh-Hans']" &#125; &#125; &#125;&#125; 上面我们定义三个html模板，一个是默认的示例模板example，还两个是自己定义的mydoc和!!，这个都是可以修改的，你习惯用什么代替就用什么代替，输入的时候打上你自己定义的名字 然后按tab就可以显示你自己定义的模板。 这个是我自己修改的模板：12345678910111213141516&#123; // Custom snippets definitions, as per https://github.com/emmetio/emmet/blob/master/snippets.json "snippets": &#123; "html": &#123; "snippets": &#123; "myviewport": "&lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;", "default-css": "&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;" &#125;, "abbreviations": &#123; "example": "&lt;div class='example' title='Custom element example'&gt;", "mydoc": "html&gt;(head&gt;meta[charset='utf-8']+title&#123;$&#123;1:Document&#125;&#125;+myviewport+default-css)+body", "!!": "mydoc[lang='en']", &#125; &#125; &#125;&#125; 当我输入!! + tab时，默认的模板是这个样的：1234567891011&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="utf-8"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;link rel="stylesheet" href="style.css"&gt;&lt;/head&gt;&lt;body&gt; &lt;/body&gt;&lt;/html&gt; 这里你会看到我还加了一个snippets，这个是添加Html的代码片段，分别名为myviewport和defult-css。这个可以在我们定义模板的时候用到，也可以在书写Html的时候，直接输入名称+tab 使用。]]></content>
@@ -8,8 +20,8 @@
         <category>Sublime Text</category>
       </categories>
       <tags>
-        <tag>其它</tag>
         <tag>分享</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +32,8 @@
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>其它</tag>
         <tag>分享</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +44,8 @@
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>其它</tag>
         <tag>分享</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +56,8 @@
         <category>Next</category>
       </categories>
       <tags>
-        <tag>其它</tag>
         <tag>分享</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -56,20 +68,20 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>笔记</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[记2019年日历上每周的心灵禅语。]]></title>
     <url>%2F2019%2F01%2F27%2F%E5%BF%83%E7%81%B5%E7%A6%85%E8%AF%AD%2F</url>
-    <content type="text"><![CDATA[第一周过去事，过去心，不可记得；现在事，现在心，随缘即可；未来事，未来心，何必劳心。 第二周生命犹如一片绿叶，随着时间的流逝，慢慢的变得枯黄，但他的叶脉，还是那么的清晰可见。 第三周木桶最短的一节决定其容量；铁链最弱的一环决定其强度；人最大的缺点决定其是否成功。 第四周每个人都有潜在的能量，只能很容易被习惯所掩盖，被时间所迷离，被惰性给消磨。 第五周你不必和因果争吵，因果从来就不会误人。你也不必和命运争吵，命运它是最公平的审判官。 第六周客来一句问候，客去的一句祝福，不分张王李赵，都是善缘；境生一份喜悦，境灭一份清净，莫辩真妄，无非心造。 第七周人生有输有赢，得势顺境时不要得意忘形，放纵自己；失势逆境时不可消极颓唐，放弃自己。 第八周播种一个行动，你会收获一个习惯；播种一个习惯，你会收获一个个性；播种一个个性，你会收获一个命运。 第九周有志的人肯努力，故不误；怡情的人淡名利，故不独；宁静的人行深远，故不折；知足的人常快乐，故不老。 第十周如果抱怨成了习惯，心灵就像上了枷锁，没有一刻解脱。唯有放下抱怨，才能体会到生命的自在与幸福。 第十一周人，只要拥有微笑，就能搞豁达乐观的活着；人，只要时刻保持微笑，就能够在慢慢人生道路上有用一张永久的通行证。 第十二周梦想是一个幸福的念想。想着想着就快乐了，它执着的立在那里，是生活的一个界标，代表着活力与向上。 第十三周生而为人，活着，活出风度，风采，风格。这些皆为外表，而气度则是内涵，是质地，是根本。 第十四周给生活添上梦想的标签，那些普通的日子就升华了，平淡的时光染上了华丽的色彩，点石成金，就是那么回事。 第十五周世界原本就不属于你。因此你用不着抛弃，要抛弃是一切的执著。万物皆为我所用，但非我所属。 第十六周聪明之人，一味向前看；智慧之人，事事向后看；聪明之人是战胜别人的人；智慧之人是战胜自己的人。 第十七周敞开心扉，宽容的对待别人你就会有用全世界，记住，千万别为利来。为利往。小看人生，你就是最幸福的人。 第十八周人生短短几十年，不要给自己留下什么遗憾，想笑就笑，想哭就哭，该爱的时候就去爱，无谓压抑自己。 第十九周用身体拥抱自然，用汗水洗净心灵，用歌唱美化年华，用意志战胜自我，用智慧感悟人生。 第二十周无法改变别人，但是可以改变自己；无法改变生命的长度，但是可以扩展它的宽度！换个角度，生活每天都是精彩的！ 第二十一周没有经历过失败的人是不完美的，唯有挫折可以磨练你的意志，提升你的境界，充实你的人生！ 第二十二周昨天和明天对我们来说都不是真实的，唯有今天才是我们能够把握得了的。请珍惜今天！ 第二十三周只要放弃满腹的牢骚，摒弃虚伪的乔装，放弃对金钱的渴望，放弃对权势的窥探，你会发现快乐随之而来。 第二十四周翅膀就该去飞翔，有梦想就要去追逐。一个人可以一无所有，却不能没有梦；可以一次次跌倒，却不能一蹶不振。 第二十五周粗茶淡饭，清心净欲，生活简单了，人就快乐了；灯红酒绿，利欲熏心，生活世故了，人就变老了。 第二十六周不要急躁，发牢骚、一定要让自己的心静下来，只有静下来，你才能听见钟表的摆动声音。 第二十七周于人不可以求，遇事不抱怨。只有善于驾驭自己情绪和心态的人，才能获得平静，感受到幸福的味道。 ####第二十八周&amp;第二十九周睿智的人看得透，故不争；豁达的人想的开，故不斗；得道的人晓天机，故不急；厚德的人重谦和，故不噪。]]></content>
+    <content type="text"><![CDATA[第一周过去事，过去心，不可记得；现在事，现在心，随缘即可；未来事，未来心，何必劳心。 第二周生命犹如一片绿叶，随着时间的流逝，慢慢的变得枯黄，但他的叶脉，还是那么的清晰可见。 第三周木桶最短的一节决定其容量；铁链最弱的一环决定其强度；人最大的缺点决定其是否成功。 第四周每个人都有潜在的能量，只能很容易被习惯所掩盖，被时间所迷离，被惰性给消磨。 第五周你不必和因果争吵，因果从来就不会误人。你也不必和命运争吵，命运它是最公平的审判官。 第六周客来一句问候，客去的一句祝福，不分张王李赵，都是善缘；境生一份喜悦，境灭一份清净，莫辩真妄，无非心造。 第七周人生有输有赢，得势顺境时不要得意忘形，放纵自己；失势逆境时不可消极颓唐，放弃自己。 第八周播种一个行动，你会收获一个习惯；播种一个习惯，你会收获一个个性；播种一个个性，你会收获一个命运。 第九周有志的人肯努力，故不误；怡情的人淡名利，故不独；宁静的人行深远，故不折；知足的人常快乐，故不老。 第十周如果抱怨成了习惯，心灵就像上了枷锁，没有一刻解脱。唯有放下抱怨，才能体会到生命的自在与幸福。 第十一周人，只要拥有微笑，就能搞豁达乐观的活着；人，只要时刻保持微笑，就能够在慢慢人生道路上有用一张永久的通行证。 第十二周梦想是一个幸福的念想。想着想着就快乐了，它执着的立在那里，是生活的一个界标，代表着活力与向上。 第十三周生而为人，活着，活出风度，风采，风格。这些皆为外表，而气度则是内涵，是质地，是根本。 第十四周给生活添上梦想的标签，那些普通的日子就升华了，平淡的时光染上了华丽的色彩，点石成金，就是那么回事。 第十五周世界原本就不属于你。因此你用不着抛弃，要抛弃是一切的执著。万物皆为我所用，但非我所属。 第十六周聪明之人，一味向前看；智慧之人，事事向后看；聪明之人是战胜别人的人；智慧之人是战胜自己的人。 第十七周敞开心扉，宽容的对待别人你就会有用全世界，记住，千万别为利来。为利往。小看人生，你就是最幸福的人。 第十八周人生短短几十年，不要给自己留下什么遗憾，想笑就笑，想哭就哭，该爱的时候就去爱，无谓压抑自己。 第十九周用身体拥抱自然，用汗水洗净心灵，用歌唱美化年华，用意志战胜自我，用智慧感悟人生。 第二十周无法改变别人，但是可以改变自己；无法改变生命的长度，但是可以扩展它的宽度！换个角度，生活每天都是精彩的！ 第二十一周没有经历过失败的人是不完美的，唯有挫折可以磨练你的意志，提升你的境界，充实你的人生！ 第二十二周昨天和明天对我们来说都不是真实的，唯有今天才是我们能够把握得了的。请珍惜今天！ 第二十三周只要放弃满腹的牢骚，摒弃虚伪的乔装，放弃对金钱的渴望，放弃对权势的窥探，你会发现快乐随之而来。 第二十四周翅膀就该去飞翔，有梦想就要去追逐。一个人可以一无所有，却不能没有梦；可以一次次跌倒，却不能一蹶不振。 第二十五周粗茶淡饭，清心净欲，生活简单了，人就快乐了；灯红酒绿，利欲熏心，生活世故了，人就变老了。 第二十六周不要急躁，发牢骚、一定要让自己的心静下来，只有静下来，你才能听见钟表的摆动声音。 第二十七周于人不可以求，遇事不抱怨。只有善于驾驭自己情绪和心态的人，才能获得平静，感受到幸福的味道。 第二十八周&amp;第二十九周睿智的人看得透，故不争；豁达的人想的开，故不斗；得道的人晓天机，故不急；厚德的人重谦和，故不噪。]]></content>
       <categories>
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>其它</tag>
         <tag>分享</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +92,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>其它</tag>
         <tag>分享</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
