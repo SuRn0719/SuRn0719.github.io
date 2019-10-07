@@ -1063,7 +1063,7 @@ pre .javascript .function {
   right: 30px;
   z-index: 1050;
   padding: 0 6px;
-  width: 24px;
+  width: initial;
   background: #222;
   font-size: 12px;
   opacity: 0.6;
@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f1811a;
+  background: #096b57;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2983,4 +2983,9 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
+}
+.fluid-vids {
+/*margin-top: 20px;
+	margin-bottom: 0 !important;*/
+  padding-top: 39.0909% !important;
 }
