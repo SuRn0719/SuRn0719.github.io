@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019年总结2020的打算]]></title>
+    <url>%2F2020%2F01%2F01%2F2019%E5%B9%B4%E6%80%BB%E7%BB%932020%E7%9A%84%E6%9C%9F%E7%9B%BC%2F</url>
+    <content type="text"><![CDATA[时间过得可真是快，2019年就这样结束了，迎来了2020年。今天就是2020年的第一天。时间匆匆过，可是2019年的目标呢，完成了多少呢？答案是，啥也没完成。先看看去年自己给自己开的坑的吧！ 1、是学习建立这个博客，然后慢慢的修改完善，以及写文章。2、年初的健身。3、练字。4、下半年去练车，考完驾照，核心。5、…… emmm，大概就这几个吧，看样子好像不多，但是对我来说还是很有难度，接下来就看看完成了多少。 1.学习建立这个博客，是自己一直的想法，今年年初才接触到，以及搭建完成。然后直接给自己定了一些目标，比如背景动态js，音乐播放器，页面预览百分比等，这些陆陆续续的都完成的差不多了。这是我想继续学习编程的想法，虽然没学到什么，但是多少还是懂的了更多。这个还是会继续下去的，但是文章嘛，，没素材实在是难写一些东西，所以都是一些杂碎的东西。2.年初的健身，年初还是去了几次，年中基本没去几次，年末也还是去了很多次，但是健身效果也不太明显，哈哈！实在是太难了，自己还是偏胖的。3.练字嘛，刚开始还是蛮积极的，后面就没有了热情，但是呢，后面自己还是有好好练，也还是写了好几只笔芯了，行楷觉得不是很好看，决定继续联系这个字帖的楷书。4.额，这个给自己定下的目标，被一直拖，一直拖到现在还是1%的样子。没啥好说的。5.其它的就更难以言喻了，不说了… 接下来就说说2020的打算吧： 1、这个博客还是继续留着吧，然后去学习更多的，然后把自己学到的东西记录在这里，然后这里可能还是会补一些我需要的功能。2、健身，这个还是会做一下吧，毕竟自己那么胖。只不过不去健身房，自己学着运动APP的方法针对练习。3、练字也还是继续，有时间就写，谁让自己的像是鸡趴的一样呢！4、练车，这个是今年的重中之重，一定会开始做，不然就要过期了，今年目标比较多，这个最好上半年就可以搞定。5、尝试参加二建考试，加油！6、有时间弄一个函授专升本！也要加油！！ 这个就是目前我对今年的打算，看看今后还有没有需要的添加的吧，暂时就先这样。]]></content>
+      <categories>
+        <category>杂碎</category>
+      </categories>
+      <tags>
+        <tag>其它</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS的书写规范和顺序]]></title>
     <url>%2F2019%2F08%2F17%2FCSS%E7%9A%84%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83%E5%92%8C%E9%A1%BA%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[我作为一个小小白，想学编程又学不会，就喜欢一步一步的去看五花八门的教程，结果还是什么都不会，现在我就想把在网上看到的一些比较好的教程记录下来，所以下面的资料都来自于网上，看看就好。 CSS书写顺序 位置属性(position, top, right, z-index, display, float等) 大小(width, height, padding, margin) 文字系列(font, line-height, letter-spacing, color- text-align等) 背景(background, border等) 其他(animation, transition等) CSS书写规范使用CSS缩写属性CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。 去掉小数点前的“0” 简写命名很多用户都喜欢简写类名，但前提是要让人看懂你的命名才能简写哦！ 16进制颜色代码缩写有些颜色代码是可以缩写的，我们就尽量缩写吧，提高用户体验为主。 连字符CSS选择器命名规范 长名称或词组可以使用中横线来为选择器命名。 不建议使用 “_”下划线来命名CSS选择器，为什么呢？ 输入的时候少按一个shift键； 浏览器兼容问题 （比如使用_tips的选择器命名，在IE6是无效的）; 能良好区分JavaScript变量命名（JS变量命名是用 “_”）。 不要随意使用IDid在JS是唯一的，不能多次使用，而使用class类选择器却可以重复使用，另外id的优先级优先与class，所以id应该按需使用，而不能滥用。 为选择器添加状态前缀有时候可以给选择器添加一个表示状态的前缀，让语义更明了，比如下图是添加了“.is-”前缀。 CSS命名规范（规则）常用的CSS命名规则：头：header内容：content/container尾：footer导航：nav侧栏：sidebar栏目：column页面外围控制整体佈局宽度：wrapper左右中：left right center登录条：loginbar标志：logo广告：banner页面主体：main热点：hot新闻：news下载：download子导航：subnav菜单：menu子菜单：submenu搜索：search友情链接：friendlink页脚：footer版权：copyright滚动：scroll内容：content标签：tags文章列表：list提示信息：msg小技巧：tips栏目标题：title加入：joinus指南：guide服务：service注册：regsiter状态：status投票：vote合作伙伴：partner 注释写法：123/* Header */内容区/* End Header */ Id的命名:(1)页面结构容器: container页头：header内容：content/container页面主体：main页尾：footer导航：nav侧栏：sidebar栏目：column页面外围控制整体佈局宽度：wrapper左右中：left right center (2)导航导航：nav主导航：mainnav子导航：subnav顶导航：topnav边导航：sidebar左导航：leftsidebar右导航：rightsidebar菜单：menu子菜单：submenu标题: title摘要: summary (3)功能标志：logo广告：banner登陆：login登录条：loginbar注册：register搜索：search功能区：shop标题：title加入：joinus状态：status按钮：btn滚动：scroll标籤页：tab文章列表：list提示信息：msg当前的: current小技巧：tips图标: icon注释：note指南：guild服务：service热点：hot新闻：news下载：download投票：vote合作伙伴：partner友情链接：link版权：copyright 注意事项:1.一律小写；2.尽量用英文；3.不加中杠和下划线；4.尽量不缩写，除非一目了然的词。 CSS样式表文件命名：主要的 master.css模块 module.css基本共用 base.css布局、版面 layout.css主题 themes.css专栏 columns.css文字 font.css表单 forms.css补丁 mend.css打印 print.css]]></content>
@@ -8,8 +20,8 @@
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>分享</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +44,8 @@
         <category>Sublime Text</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>其它</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +56,8 @@
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>其它</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +68,8 @@
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>其它</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +80,8 @@
         <category>Next</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>其它</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +92,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>分享</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +104,8 @@
         <category>杂碎</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>其它</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +116,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>其它</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
