@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="分享,其它,">
+  <meta name="keywords" content="其它,分享,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="素材都是引用别人博客上的，因为我自己是不会写的。 实现背景磁吸线在/themes/next/source/js/src下新建文件 line.js ，接着把如下的代码拷贝粘贴到 line.js 文件中。1!function()&amp;#123;function o(w,v,i)&amp;#123;return w.getAttribute(v)||i&amp;#125;function j(i)&amp;#123;return">
-<meta name="keywords" content="分享,其它">
+<meta name="keywords" content="其它,分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Next主题一些的简单设置">
 <meta property="og:url" content="http://surngg.com/2019/0129/48c9c647.html">
@@ -428,9 +428,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Share/" rel="tag"><i class="fa fa-tag"></i> 分享</a>
-          
             <a href="/tags/Other/" rel="tag"><i class="fa fa-tag"></i> 其它</a>
+          
+            <a href="/tags/Share/" rel="tag"><i class="fa fa-tag"></i> 分享</a>
           
         </div>
       
@@ -660,7 +660,7 @@
     var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
     var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
     var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-    document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
   }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
   siteTime();
 </script>
